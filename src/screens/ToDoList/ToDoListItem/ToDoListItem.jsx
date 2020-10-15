@@ -1,7 +1,9 @@
 import React from 'react';
 import TextComponent from '../../../shared/components/Input/Text/Text';
-import ButtonComponent from '../../../shared/components/Input/Button/Button'
-import './styl.css'
+import ButtonComponent from '../../../shared/components/Input/Button/Button';
+import './styl.scss';
+
+
 
 function ToDoListItemComponent(props) {
   return (
@@ -26,3 +28,4 @@ function ToDoListItemComponent(props) {
   )
 }
 export default ToDoListItemComponent
+

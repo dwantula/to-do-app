@@ -4,7 +4,7 @@ import InputComponent from '../../shared/components/Input/Input/Input';
 import ToDoListItemComponent from './ToDoListItem/ToDoListItem';
 import { generateId } from '../../shared/utils/idGenerator';
 import { saveItemInLocalStorage, getItemFromLocalStorage } from '../../shared/utils/LocalStorage';
-import './styles.css';
+import './styles.scss';
 
 class ToDoListComponent extends PureComponent {
   constructor(props) {
@@ -33,10 +33,10 @@ class ToDoListComponent extends PureComponent {
 
   onAddNewItemClick() {
     const { items, newItem } = this.state;
-    const itemToAdd = { id: generateId('item'), isCompleted: false, text: newItem };
+    const itemToAdd = { id: generateId('item'), isCompleted: false, text: newItem};
     const newItems = [...items, itemToAdd];
     this.setState({
-      items: newItems,
+      items: newItems ,
       newItem: ''
     });
     saveItemInLocalStorage('items', newItems)
@@ -73,13 +73,13 @@ class ToDoListComponent extends PureComponent {
             className="button-add-thing"
             type="button"
             text="Add new item"
-            onClick={this.onAddNewItemClick}
+            onClick={this.onAddNewItemClick.bind(this)}
           />
         </div>
         <div>
-          {this.state.items.map(item => (
-            <div key= {item.id}>
-              <ToDoListItemComponent markClicked={this.markCompleted} deleteClicked={this.deleteItem} item= {item}  />
+          {this.state.items || [].map(item => (
+            <div key= {item.id} >
+              <ToDoListItemComponent markClicked={this.markCompleted} deleteClicked={this.deleteItem} item= {item} />
               <p className="line"></p>
             </div>
           ))}

@@ -1,13 +1,25 @@
-.row-item {
+@mixin row-form {
   display: flex;
   flex-direction: row;
+}
+
+@mixin button-check-delete {
+  border-radius: 50%;
+  outline: 0px;
+  cursor: pointer;
+  margin-left: 5px;
+  height: 17px;
+  width: 17px;
+}
+
+.row-item {
+  @include row-form;
   margin-left: 10px;
   align-items: center;
 }
 
 .row-item-completed {
-  display: flex;
-  flex-direction: row;
+  @include row-form;
   position: relative;
   outline: 0;
   cursor: pointer;
@@ -18,18 +30,13 @@
 }
 
 .row{
-  display: flex;
+  @include row-form;
   align-items: center;
 }
 
 .delete-button {
-  border-radius: 50px;
-  margin-left: 10px;
-  cursor: pointer;
-  height: 17px;
-  width: 18px;
+  @include button-check-delete;
   background-color: white;
-  outline: 0;
   border: 1px solid red;
   color:black;
   margin-top: 5px;
@@ -41,24 +48,15 @@
 }
 
 .check-button {
+  @include button-check-delete;
   border: 1px solid green;
-  border-radius: 50%;
   margin-bottom: 15px;
-  height: 17px;
-  width: 17px;
-  margin-left: 5px;
-  cursor: pointer;
   background-color: green;
   background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
-  /* background-position: 1px .5px ; */
-  outline: 0;
   margin-right: 10px;
   margin-top: 20px;
 }
 
 .check-button:hover {
-  
   border: 1px solid green;
-  /* background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E "); */
-
 }
