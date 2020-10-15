@@ -12,7 +12,7 @@ class ToDoListComponent extends PureComponent {
     this.state = {
       items: [],
       newItem: '',
-      
+
     }
 
     this.onInputChange = this.onInputChange.bind(this);
@@ -23,7 +23,7 @@ class ToDoListComponent extends PureComponent {
   }
 
   componentDidMount() {
-    const tasks = getItemFromLocalStorage('items')
+    const tasks = getItemFromLocalStorage('items') || [];
     this.setState({items: tasks})
   }
 
@@ -62,7 +62,7 @@ class ToDoListComponent extends PureComponent {
     this.setState({items: []})
     localStorage.clear('items')
   }
-   
+
   render() {
     return (
       <div className="container">
@@ -84,7 +84,7 @@ class ToDoListComponent extends PureComponent {
             </div>
           ))}
         </div>
-        <ButtonComponent 
+        <ButtonComponent
           className="clear-button"
           type="button"
           text="Clean"
