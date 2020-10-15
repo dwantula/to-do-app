@@ -14,7 +14,7 @@
 
 .row-item {
   @include row-form;
-  margin-left: 10px;
+  margin-left: 50px;
   align-items: center;
 }
 
@@ -25,7 +25,7 @@
   cursor: pointer;
   opacity: .5;
   text-decoration: line-through; 
-  margin-left: 10px; 
+  margin-left: 50px; 
   align-items: center;
 }
 
@@ -41,6 +41,7 @@
   color:black;
   margin-top: 5px;
   padding: 0px 0px 2px 2px ;
+  margin-left: 14px;
 }
 
 .delete-button:hover {
@@ -53,7 +54,7 @@
   margin-bottom: 15px;
   background-color: green;
   background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
-  margin-right: 10px;
+  margin-right: 14px;
   margin-top: 20px;
 }
 

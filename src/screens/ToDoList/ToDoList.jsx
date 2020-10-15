@@ -77,7 +77,7 @@ class ToDoListComponent extends PureComponent {
           />
         </div>
         <div>
-          {this.state.items || [].map(item => (
+          {this.state.items.map(item => (
             <div key= {item.id} >
               <ToDoListItemComponent markClicked={this.markCompleted} deleteClicked={this.deleteItem} item= {item} />
               <p className="line"></p>
