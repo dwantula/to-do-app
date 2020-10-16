@@ -14,14 +14,13 @@ class InputComponent extends PureComponent {
   render() {
     return (
       <input 
-      className= "input-add-item" 
-      placeholder= "Write down what you want to do..." 
-      type= {this.props.type} 
-      value= {this.props.value} 
-      onChange= {this.handleChange}>
+        className = "input-add-item" 
+        placeholder = "Write down what you want to do..." 
+        type = {this.props.type} 
+        value = {this.props.value} 
+        onChange = {this.handleChange}>
       </input>
     )
   }
 }
-
 export default InputComponent;

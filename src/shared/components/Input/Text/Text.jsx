@@ -6,5 +6,4 @@ function TextComponent(props) {
     <p className= "thing-text"> {props.text}</p>
   )
 }
-
 export default TextComponent;
