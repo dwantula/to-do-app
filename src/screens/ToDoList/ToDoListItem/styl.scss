@@ -3,15 +3,6 @@
   flex-direction: row;
 }
 
-@mixin button-check-delete {
-  border-radius: 50%;
-  outline: 0px;
-  cursor: pointer;
-  margin-left: 5px;
-  height: 17px;
-  width: 17px;
-}
-
 .row-item {
   @include row-form;
   margin-left: 50px;
@@ -29,35 +20,35 @@
   align-items: center;
 }
 
-.row{
+.row {
   @include row-form;
   align-items: center;
 }
 
 .delete-button {
-  @include button-check-delete;
   background-color: white;
-  border: 1px solid red;
-  color:black;
+  font-size: 15px;
+  border: none;
+  color: red;
   margin-top: 5px;
-  padding: 0px 0px 2px 2px ;
+  padding: 0px;
   margin-left: 14px;
+  outline: 0px;
+  cursor: pointer;
 }
 
 .delete-button:hover {
-  background-color: red;
+  background-color: white;
+  transform: scale(1.5)
 }
 
-.check-button {
-  @include button-check-delete;
-  border: 1px solid green;
-  margin-bottom: 15px;
-  background-color: green;
-  background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+.checkbox :hover {
+  transform: scale(1.5);
+}
+
+.checkbox {
+  color: green;
   margin-right: 14px;
-  margin-top: 20px;
-}
-
-.check-button:hover {
-  border: 1px solid green;
+  margin-top: 5px;
+  transition: transform 0.5s ease-in-out;
 }

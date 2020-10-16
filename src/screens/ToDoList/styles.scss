@@ -1,4 +1,4 @@
-  $main-color : #40e0d0;
+$main-color : lightgray;
 
 .container {
   border: 3px solid $main-color;
@@ -11,7 +11,7 @@
   background-color:white;
   display: flex;
   flex-direction: column;
-  box-shadow: 20px 10px 10px 15px #000000, 30px 10px 5px -90px #000000;
+  box-shadow: 5px 8px 5px 8px #888888, 30px 10px 5px -90px #000000;
 }
 
 .text-decoration {
@@ -23,8 +23,7 @@
 .line {
   border-bottom: 2px solid $main-color;
   margin: 0 15px;
-  box-shadow: 1px 1px 1px 1px #afaa10, 0px 0px 0px 0px #1f8e22;
-
+  box-shadow: 1px 1px 1px 1px lightgray, 0px 0px 0px 0px lightgray;
 }
 
 .title {
@@ -39,14 +38,13 @@
 .clear-button {
   width: 100px;
   height: 30px;
-  margin: 10px 0px 10px 250px;
-  border-radius: 10px;
+  margin: 13px 0px 10px 250px;
+  border-radius: 18px;
   border: 2px solid red;
   outline: 0;
   cursor: pointer;
   background-color: white;
   transition: all 0.5s ease-in-out;
-  
 }
 
 .clear-button:hover {
@@ -56,12 +54,13 @@
 }
 
 .button-add-thing {
-  width: 80px;
   border: 2px solid $main-color;
-  border-radius: 10px;
+  border-radius: 50%;
   color: darkslategray;
+  width: 35px;
   height: 35px;
-  margin-left: 10px;
+  font-size: 25px;
+  margin-left: 30px;
   outline: 0;
   cursor: pointer;
   background-color: white;
@@ -73,6 +72,6 @@
   background-color: $main-color;
   border: none;
   box-shadow: 0px 0px 0px 0px #000000, 0px 0px 10px 2px #000000;
-  transform: scale(1.1);
+  transform: scale(1.03);
 }
 

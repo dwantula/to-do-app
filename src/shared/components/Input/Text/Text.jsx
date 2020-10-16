@@ -1,8 +1,9 @@
 import React from 'react';
+import './style.scss';
 
 function TextComponent(props) {
   return (
-    <p>{props.text}</p>
+    <p className= "thing-text"> {props.text}</p>
   )
 }
 

@@ -12,8 +12,7 @@ class ToDoListComponent extends PureComponent {
     this.state = {
       items: [],
       newItem: '',
-
-    }
+    };
 
     this.onInputChange = this.onInputChange.bind(this);
     this.onAddNewItemClick = this.onAddNewItemClick.bind(this);
@@ -24,72 +23,76 @@ class ToDoListComponent extends PureComponent {
 
   componentDidMount() {
     const tasks = getItemFromLocalStorage('items') || [];
-    this.setState({items: tasks})
+    this.setState({ items : tasks });
   }
 
   onInputChange(inputValue) {
-    this.setState({ newItem: inputValue })
+    this.setState({ newItem: inputValue });
   }
 
   onAddNewItemClick() {
     const { items, newItem } = this.state;
-    const itemToAdd = { id: generateId('item'), isCompleted: false, text: newItem};
-    const newItems = [...items, itemToAdd];
+    const itemToAdd= { id: generateId('item'), isCompleted: false, text: newItem};
+    const newItems= [...items, itemToAdd];
     this.setState({
       items: newItems ,
       newItem: ''
     });
-    saveItemInLocalStorage('items', newItems)
+    saveItemInLocalStorage('items', newItems);
    }
 
   markCompleted(id) {
-    const index = this.state.items.findIndex(item => item.id === id)
-    const newItems = [...this.state.items]
-    const itemStatus = newItems[index].isCompleted;
-    console.log(itemStatus)
-    newItems[index].isCompleted = !itemStatus
-    this.setState({items: newItems})
-    saveItemInLocalStorage('items', newItems)
+    const index= this.state.items.findIndex(item=> item.id === id);
+    const newItems= [...this.state.items];
+    const itemStatus= newItems[index].isCompleted;
+    newItems[index].isCompleted = !itemStatus;
+    this.setState({ items : newItems });
+    saveItemInLocalStorage('items', newItems);
   }
 
   deleteItem(id) {
-    const newItems = this.state.items.filter(element => element.id !== id )
-    this.setState({items: newItems})
-    saveItemInLocalStorage('items', newItems)
+    const newItems = this.state.items.filter(element=> element.id !== id);
+    this.setState({items: newItems});
+    saveItemInLocalStorage('items', newItems);
   }
 
   deleteAllItems() {
-    this.setState({items: []})
-    localStorage.clear('items')
+    this.setState({ items : [] });
+    localStorage.clear('items');
   }
 
   render() {
     return (
-      <div className="container">
-        <h2 className="title">TO DO LIST</h2>
-        <div className="row">
-          <InputComponent   type="text" value={this.state.newItem} onChange={this.onInputChange}/>
+      <div className= "container">
+        <h2 className= "title">TO DO LIST</h2>
+        <div className= "row">
+          <InputComponent   
+          type= "text" 
+          value= {this.state.newItem} 
+          onChange= {this.onInputChange}/>
           <ButtonComponent
-            className="button-add-thing"
-            type="button"
-            text="Add new item"
-            onClick={this.onAddNewItemClick.bind(this)}
+            className= "button-add-thing"
+            type= "button"
+            text= "+"
+            onClick= {this.onAddNewItemClick.bind(this)}
           />
         </div>
         <div>
-          {this.state.items.map(item => (
+          {this.state.items.map(item=> (
             <div key= {item.id} >
-              <ToDoListItemComponent markClicked={this.markCompleted} deleteClicked={this.deleteItem} item= {item} />
-              <p className="line"></p>
+            <ToDoListItemComponent 
+              markClicked= {this.markCompleted} 
+              deleteClicked= {this.deleteItem} 
+              item= {item} />
+            <p className= "line"></p>
             </div>
           ))}
         </div>
         <ButtonComponent
-          className="clear-button"
-          type="button"
-          text="Clean"
-          onClick={this.deleteAllItems}
-        />
+          className= "clear-button"
+          type= "button"
+          text= "Clean All"
+          onClick= {this.deleteAllItems}/>
       </div>
     )
   }
