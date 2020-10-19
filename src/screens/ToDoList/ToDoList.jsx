@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
-import ButtonComponent from '../../shared/components/Input/Button/Button';
-import InputComponent from '../../shared/components/Input/Input/Input';
+import ButtonComponent from '../../shared/components/Button/Button';
+import InputComponent from '../../shared/components/Input/Input';
 import ToDoListItemComponent from './ToDoListItem/ToDoListItem';
 import { generateId } from '../../shared/utils/idGenerator';
-import { saveItemInLocalStorage, getItemFromLocalStorage } from '../../shared/utils/LocalStorage';
+import { saveItemInLocalStorage, getItemFromLocalStorage } from '../../shared/utils/localStorage';
 import './styles.scss';
 
 class ToDoListComponent extends PureComponent {
@@ -64,38 +64,41 @@ class ToDoListComponent extends PureComponent {
   render() {
     return (
       <div className="container">
-        <h2 className="title">TO DO LIST</h2>
-        <div className="row">
-          <InputComponent   
-            type="text" 
-            value={this.state.newItem} 
-            onChange={this.onInputChange}
-          />
-          <ButtonComponent
-            className="button-add-thing"
-            type="button"
-            text="+"
-            onClick={this.onAddNewItemClick.bind(this)}
-          />
-        </div>
-        <div>
-          {this.state.items.map(item=> (
-            <div key={item.id}>
-            <ToDoListItemComponent 
-              markClicked={this.markCompleted} 
-              deleteClicked={this.deleteItem} 
-              item={item} 
+        <header className="header">
+          <h2 className="title">TO DO LIST</h2>
+        </header>
+        <main className="card">
+          <div className="row">
+            <InputComponent
+              type="text"
+              value={this.state.newItem}
+              onChange={this.onInputChange}
             />
-            <p className="line"></p>
-            </div>
-          ))}
-        </div>
-        <ButtonComponent
-          className="clear-button"
-          type="button"
-          text="Clean All"
-          onClick={this.deleteAllItems}
-        />
+            <ButtonComponent
+              className="button-add-thing"
+              type="button"
+              text="+"
+              onClick={this.onAddNewItemClick.bind(this)}
+            />
+          </div>
+          <div>
+            {this.state.items.map(item=> (
+
+              <ToDoListItemComponent
+                key={item.id}
+                markClicked={this.markCompleted}
+                deleteClicked={this.deleteItem}
+                item={item}
+              />
+            ))}
+          </div>
+          <ButtonComponent
+            className="clear-button"
+            type="button"
+            text="Clear"
+            onClick={this.deleteAllItems}
+          />
+        </main>
       </div>
     )
   }

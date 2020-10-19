@@ -1,0 +1,11 @@
+@import './../../main-styles.scss';
+
+.input-add-item {
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  height: 30px;
+  color: $input-text-color;
+  outline: 0;
+  flex: 1;
+  padding: 4px 12px;
+}

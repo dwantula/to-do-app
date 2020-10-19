@@ -1,0 +1,33 @@
+@import './../../../shared/main-styles.scss';
+
+.row {
+  @include row-form;
+  align-items: center;
+}
+
+.text-strikethrough {
+  text-decoration: line-through;
+}
+
+.delete-icon {
+  color: $negative-color;
+  font-size: 18px;
+}
+
+.delete-button {
+  background-color: $white;
+  border: 0;
+  @include button-styles;
+}
+
+.checkbox {
+  color: $positive-color;
+  border: 1px solid $positive-color;
+  background-color: transparent;
+  padding: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  margin-right: 14px;
+  @include button-styles;
+}
