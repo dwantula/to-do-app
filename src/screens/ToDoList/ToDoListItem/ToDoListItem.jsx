@@ -1,31 +1,29 @@
 import React from 'react';
-import TextComponent from '../../../shared/components/Input/Text/Text';
-import ButtonComponent from '../../../shared/components/Input/Button/Button';
-import './styl.scss';
+import TextComponent from '../../../shared/components/Text/Text';
+import ButtonComponent from '../../../shared/components/Button/Button';
+import './styles.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck} from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 function ToDoListItemComponent(props) {
   return (
     <div className="row">
-      <div className={` ${props.item.isCompleted ? 'row-item-completed' : 'row-item'}`}>
-        <FontAwesomeIcon
-          icon={faCheck} 
-          onClick={() => props.markClicked(props.item.id)}
-          className="checkbox"
-        />
-        <TextComponent 
-          className="row-item-completed"
+      <button className="checkbox" onClick={() => props.markClicked(props.item.id)}>
+        {props.item.isCompleted && (
+          <FontAwesomeIcon icon={faCheck} />
+        )}
+      </button>
+        <TextComponent
+          class={props.item.isCompleted ? 'text-strikethrough' : ''}
           text={props.item.text}
         />
-      </div>   
-      <ButtonComponent 
-        type="button" 
+      <button
         className="delete-button"
-        text="X"
         onClick={() => props.deleteClicked(props.item.id)}
-      />
-    </div>  
+      >
+        <FontAwesomeIcon icon={faTimes} className="delete-icon"/>
+        </button>
+    </div>
   )
 }
 

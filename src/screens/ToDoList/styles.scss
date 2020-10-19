@@ -1,75 +1,75 @@
-@import './../../shared/components/main-styles.scss';
+@import './../../shared/main-styles.scss';
+
+$border-radius: 18px;
 
 .container {
-  border: 3px solid $main-color;
-  border-radius: 18px;
-  width: 400px;
+  border-radius: $border-radius;
+  max-width: 900px;
   min-height: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
+  margin: 100px auto;
   background-color:white;
   display: flex;
   flex-direction: column;
-  box-shadow: 5px 8px 5px 8px gray, 30px 10px 5px -90px black;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
 }
 
-.text-decoration {
-  color:black;
-  display: flex;
-  letter-spacing: 2px;
-}
-
-.line {
-  border-bottom: 2px solid $main-color;
-  margin: 0 15px;
-  box-shadow: 1px 1px 1px 1px lightgray, 0px 0px 0px 0px lightgray;
+.header {
+  text-align: center;
+  background-color: $positive-color;
+  padding: 10px 0;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  background-image: linear-gradient(to right, #77A1D3 0, #79CBCA);
 }
 
 .title {
-  align-items: center;
   text-align: center;
-  color: $title-color;
-  font-stretch: expanded;
-  background-color: $main-color;
-  letter-spacing: 2px;
+  color: $white;
+  margin: 0;
+}
+
+.card {
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .clear-button {
-  width: 100px;
-  height: 30px;
-  margin: 13px 0px 10px 250px;
-  border-radius: 18px;
-  border: 2px solid red;
   @include button-styles;
-  background-color: white;
-  transition: all 0.5s ease-in-out;
-}
-
-.clear-button:hover {
-  background-color:  red;
-  box-shadow: 0px 0px 0px 0px black, 0px 0px 10px 2px black;
-  transform: scale(1.1) rotate(5deg);
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  align-self: flex-end;
+  border: 1px solid $negative-color;
+  background-color: $negative-color;
+  color: white;
+  transition: all 0.3s;
+  &:hover {
+    background-color: white;
+    color: $negative-color;
+    border-color: $negative-color;
+  }
 }
 
 .button-add-thing {
-  border: 2px solid $main-color;
+  @include button-styles;
+  border: 1px solid $positive-color;
   border-radius: 50%;
-  color: darkslategray;
+  background-color: $positive-color;
   width: 35px;
   height: 35px;
   font-size: 25px;
   margin-left: 30px;
-  @include button-styles;
-  background-color: white;
+  color: $white;
   margin-right: 10px;
-  transition: transform 0.5s ease-in-out;
+  transition: all 0.3s;
+  &:hover {
+    background: $white;
+    color: $positive-color;
+  }
 }
-
-.button-add-thing:hover {
-  background-color: $main-color;
-  border: none;
-  box-shadow: 0px 0px 0px 0px black, 0px 0px 10px 2px black;
-  transform: scale(1.03);
-}
-
