@@ -1,4 +1,4 @@
-$main-color : lightgray;
+@import './../../shared/components/main-styles.scss';
 
 .container {
   border: 3px solid $main-color;
@@ -41,8 +41,7 @@ $main-color : lightgray;
   margin: 13px 0px 10px 250px;
   border-radius: 18px;
   border: 2px solid red;
-  outline: 0;
-  cursor: pointer;
+  @include button-styles;
   background-color: white;
   transition: all 0.5s ease-in-out;
 }
@@ -61,8 +60,7 @@ $main-color : lightgray;
   height: 35px;
   font-size: 25px;
   margin-left: 30px;
-  outline: 0;
-  cursor: pointer;
+  @include button-styles;
   background-color: white;
   margin-right: 10px;
   transition: transform 0.5s ease-in-out;

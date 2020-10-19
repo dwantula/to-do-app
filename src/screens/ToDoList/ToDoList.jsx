@@ -63,38 +63,38 @@ class ToDoListComponent extends PureComponent {
 
   render() {
     return (
-      <div className= "container">
-        <h2 className= "title">TO DO LIST</h2>
-        <div className= "row">
+      <div className="container">
+        <h2 className="title">TO DO LIST</h2>
+        <div className="row">
           <InputComponent   
-            type = "text" 
-            value = {this.state.newItem} 
-            onChange = {this.onInputChange}
+            type= "text" 
+            value= {this.state.newItem} 
+            onChange= {this.onInputChange}
           />
           <ButtonComponent
-            className = "button-add-thing"
-            type = "button"
-            text = "+"
-            onClick = {this.onAddNewItemClick.bind(this)}
+            className= "button-add-thing"
+            type= "button"
+            text= "+"
+            onClick= {this.onAddNewItemClick.bind(this)}
           />
         </div>
         <div>
-          {this.state.items.map(item => (
-            <div key= {item.id}>
+          {this.state.items.map(item=> (
+            <div key={item.id}>
             <ToDoListItemComponent 
-              markClicked = {this.markCompleted} 
-              deleteClicked = {this.deleteItem} 
-              item = {item} 
+              markClicked= {this.markCompleted} 
+              deleteClicked= {this.deleteItem} 
+              item= {item} 
             />
-            <p className= "line"></p>
+            <p className="line"></p>
             </div>
           ))}
         </div>
         <ButtonComponent
-          className = "clear-button"
-          type = "button"
-          text = "Clean All"
-          onClick = {this.deleteAllItems}
+          className= "clear-button"
+          type= "button"
+          text= "Clean All"
+          onClick= {this.deleteAllItems}
         />
       </div>
     )

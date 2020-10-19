@@ -1,7 +1,4 @@
-@mixin row-form {
-  display: flex;
-  flex-direction: row;
-}
+@import './../../../shared/components/main-styles.scss';
 
 .row-item {
   @include row-form;
@@ -12,8 +9,7 @@
 .row-item-completed {
   @include row-form;
   position: relative;
-  outline: 0;
-  cursor: pointer;
+  @include button-styles;
   opacity: .5;
   text-decoration: line-through; 
   margin-left: 50px; 
@@ -33,13 +29,12 @@
   margin-top: 5px;
   padding: 0px;
   margin-left: 14px;
-  outline: 0px;
-  cursor: pointer;
+  @include button-styles;
 }
 
 .delete-button:hover {
   background-color: white;
-  transform: scale(1.5)
+  transform: scale(1.5);
 }
 
 .checkbox :hover {

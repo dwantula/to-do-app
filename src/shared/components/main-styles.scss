@@ -1,0 +1,12 @@
+$main-color: lightgray;
+$bg-color: gainsboro;
+
+@mixin button-styles {
+  outline: 0;
+  cursor: pointer;
+}
+
+@mixin row-form {
+  display: flex;
+  flex-direction: row;
+}

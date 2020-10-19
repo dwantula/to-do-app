@@ -1,3 +1,5 @@
+@import './shared/components/main-styles';
+
 body {
-  background-color: gainsboro;
+  background-color: $bg-color;
 }
