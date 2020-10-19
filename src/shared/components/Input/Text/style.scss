@@ -1,4 +1,6 @@
+@import './../../main-styles.scss';
+
 .thing-text {
   letter-spacing: 2px;
-  color: grey;
+  color: $thing-text-color;
 }

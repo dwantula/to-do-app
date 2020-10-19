@@ -46,4 +46,5 @@
   margin-right: 14px;
   margin-top: 5px;
   transition: transform 0.5s ease-in-out;
+  @include button-styles;
 }

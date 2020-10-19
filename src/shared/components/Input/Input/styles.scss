@@ -1,8 +1,10 @@
+@import './../../main-styles.scss';
+
 .input-add-item {
   border: 2px solid lightgray;
   border-radius: 8px;
   height: 30px;
-  color: darkgray;
+  color: $input-text-color;
   width: 290px;
   outline: 0;
   margin-left: 10px;
