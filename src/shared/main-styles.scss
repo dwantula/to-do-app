@@ -1,0 +1,21 @@
+$main-color: lightgray;
+$bg-color: gainsboro;
+$thing-text-color: gray;
+$title-color: gray;
+$input-text-color: darkgray;
+$button-add-thing-color: darkslategray;
+$input-text-color: darkgray;
+$positive-color: #6CCEBB;
+$negative-color: #F86C6B;
+$white: #fff;
+
+
+@mixin button-styles {
+  outline: 0;
+  cursor: pointer;
+}
+
+@mixin row-form {
+  display: flex;
+  flex-direction: row;
+}

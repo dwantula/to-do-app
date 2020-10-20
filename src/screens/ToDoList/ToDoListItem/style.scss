@@ -1,0 +1,48 @@
+@import './../../../shared/main-styles.scss';
+
+.row-item {
+  @include row-form;
+  margin-left: 50px;
+  align-items: center;
+}
+
+.row-item-completed {
+  @include row-form;
+  @include button-styles;
+  opacity: .5;
+  text-decoration: line-through; 
+  margin-left: 50px; 
+  align-items: center;
+}
+
+.row {
+  @include row-form;
+}
+
+.delete-button {
+  background-color: white;
+  font-size: 15px;
+  border: none;
+  color: red;
+  margin-top: 5px;
+  padding: 0px;
+  margin-left: 14px;
+  @include button-styles;
+}
+
+.delete-button:hover {
+  background-color: white;
+  transform: scale(1.5);
+}
+
+.checkbox :hover {
+  color: rgb(113, 159, 40);
+}
+
+.checkbox {
+  color: green;
+  margin-right: 14px;
+  margin-top: 5px;
+  transition: transform 3s ease-out;
+  @include button-styles;
+}

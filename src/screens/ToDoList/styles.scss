@@ -1,0 +1,78 @@
+@import './../../shared/main-styles.scss';
+
+.container {
+  border-radius: 18px;
+  width: 600px;
+  min-height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  background-color:white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 8px 5px 8px gray, 30px 10px 5px -90px black;
+}
+
+.text-decoration {
+  color:black;
+  display: flex;
+  letter-spacing: 2px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  background-image: linear-gradient(to right, #77A1D3 0, #79CBCA);
+  letter-spacing: 2px;
+  height: 40px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 15px;
+  margin-left: -1px;
+}
+
+.clear-button {
+  @include button-styles;
+  margin-left: 530px;
+  border-radius: 50%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid $negative-color;
+  background-color: $negative-color;
+  color: white;
+  transition: all 0.3s;
+}
+
+.clear-button:hover {
+  background-color:  red;
+  color: $white;
+  box-shadow: 0px 0px 3px 2px gray;
+}
+
+.button-add-thing {
+  border: 2px solid $main-color;
+  border-radius: 50%;
+  color: $white;
+  width: 40px;
+  height: 40px;
+  font-size: 25px;
+  margin-left: 30px;
+  @include button-styles;
+  background-color: $positive-color;
+  margin-right: 10px;
+  // transition: all 0.3s;
+  margin-top: 2px;
+}
+
+.button-add-thing:hover {
+  background-color: $positive-color;
+  border: none;
+  box-shadow: 0px 0px 0px 0px black, 0px 0px 10px 2px black;
+  // transform: scale(1.03);
+}
+
