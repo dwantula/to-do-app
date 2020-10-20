@@ -1,9 +1,8 @@
-@import './../../shared/components/main-styles.scss';
+@import './../../shared/main-styles.scss';
 
 .container {
-  border: 3px solid $main-color;
   border-radius: 18px;
-  width: 400px;
+  width: 600px;
   min-height: 400px;
   margin-left: auto;
   margin-right: auto;
@@ -20,56 +19,60 @@
   letter-spacing: 2px;
 }
 
-.line {
-  border-bottom: 2px solid $main-color;
-  margin: 0 15px;
-  box-shadow: 1px 1px 1px 1px lightgray, 0px 0px 0px 0px lightgray;
-}
-
 .title {
+  display: flex;
   align-items: center;
-  text-align: center;
-  color: $title-color;
-  font-stretch: expanded;
-  background-color: $main-color;
+  justify-content: center;
+  color: $white;
+  background-image: linear-gradient(to right, #77A1D3 0, #79CBCA);
   letter-spacing: 2px;
+  height: 40px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 15px;
+  margin-left: -1px;
 }
 
 .clear-button {
-  width: 100px;
-  height: 30px;
-  margin: 13px 0px 10px 250px;
-  border-radius: 18px;
-  border: 2px solid red;
   @include button-styles;
-  background-color: white;
-  transition: all 0.5s ease-in-out;
+  margin-left: 530px;
+  border-radius: 50%;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 50px;
+  height: 50px;
+  border: 1px solid $negative-color;
+  background-color: $negative-color;
+  color: white;
+  transition: all 0.3s;
 }
 
 .clear-button:hover {
   background-color:  red;
-  box-shadow: 0px 0px 0px 0px black, 0px 0px 10px 2px black;
-  transform: scale(1.1) rotate(5deg);
+  color: $white;
+  box-shadow: 0px 0px 3px 2px gray;
 }
 
 .button-add-thing {
   border: 2px solid $main-color;
   border-radius: 50%;
-  color: darkslategray;
-  width: 35px;
-  height: 35px;
+  color: $white;
+  width: 40px;
+  height: 40px;
   font-size: 25px;
   margin-left: 30px;
   @include button-styles;
-  background-color: white;
+  background-color: $positive-color;
   margin-right: 10px;
-  transition: transform 0.5s ease-in-out;
+  // transition: all 0.3s;
+  margin-top: 2px;
 }
 
 .button-add-thing:hover {
-  background-color: $main-color;
+  background-color: $positive-color;
   border: none;
   box-shadow: 0px 0px 0px 0px black, 0px 0px 10px 2px black;
-  transform: scale(1.03);
+  // transform: scale(1.03);
 }
 

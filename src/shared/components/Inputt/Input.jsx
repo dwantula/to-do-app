@@ -15,7 +15,7 @@ class InputComponent extends PureComponent {
     return (
       <input 
         className="input-add-item" 
-        placeholder="Write down what you want to do..." 
+        placeholder={this.props.placeholder} 
         type={this.props.type} 
         value={this.props.value} 
         onChange={this.handleChange}>

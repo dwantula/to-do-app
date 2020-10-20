@@ -1,0 +1,18 @@
+@import './../../main-styles.scss';
+
+.input-add-item {
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  height: 30px;
+  color: $input-text-color;
+  outline: 0;
+  width: 465px;
+  padding: 4px 12px;
+  margin-left: 15px;
+}
+
+.input-add-item:focus {
+  box-shadow: 0px 0px 2px 2px #888888;
+  border: 1px solid #e9f3e9;
+  transform: scale(1.03);
+}

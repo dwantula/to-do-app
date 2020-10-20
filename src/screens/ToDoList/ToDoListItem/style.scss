@@ -1,4 +1,4 @@
-@import './../../../shared/components/main-styles.scss';
+@import './../../../shared/main-styles.scss';
 
 .row-item {
   @include row-form;
@@ -8,7 +8,6 @@
 
 .row-item-completed {
   @include row-form;
-  position: relative;
   @include button-styles;
   opacity: .5;
   text-decoration: line-through; 
@@ -18,7 +17,6 @@
 
 .row {
   @include row-form;
-  align-items: center;
 }
 
 .delete-button {
@@ -38,13 +36,13 @@
 }
 
 .checkbox :hover {
-  transform: scale(1.5);
+  color: rgb(113, 159, 40);
 }
 
 .checkbox {
   color: green;
   margin-right: 14px;
   margin-top: 5px;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 3s ease-out;
   @include button-styles;
 }
